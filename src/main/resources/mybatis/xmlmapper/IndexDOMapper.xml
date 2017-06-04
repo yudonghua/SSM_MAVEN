@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mvn_ssm.api.dao.IndexDOMapper">
+    <resultMap id="ItemMap" type="Map">
+        <result column="item_name" property="itemName"/>
+        <result column="item_img" property="itemImg"/>
+        <result column="item_price" property="itemPrice" />
+    </resultMap>
+    <sql id="itemColumn">item_name,item_img,item_price</sql>
+    <select id="getItems" parameterType="java.lang.String" resultMap="ItemMap">
+        select <include refid="itemColumn"/>
+        from wm_item
+    </select>
+    <select id="getItem" parameterType="long" resultMap="ItemMap">
+        select <include refid="itemColumn"/>
+        from wm_item
+        where item_id=#{id}
+    </select>
+    <select id="getMap" parameterType="Map" resultMap="ItemMap">
+        select <include refid="itemColumn"/>
+        from wm_item
+        where item_id=#{item_id} and item_name=#{item_name}
+    </select>
+</mapper>

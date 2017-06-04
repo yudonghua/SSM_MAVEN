@@ -2,6 +2,7 @@ package com.mvn_ssm.api.service.impl;
 
 import com.mvn_ssm.api.bean.DealerDO;
 import com.mvn_ssm.api.dao.DealerDOMapper;
+import com.mvn_ssm.api.dao.IndexDOMapper;
 import com.mvn_ssm.api.service.DealerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

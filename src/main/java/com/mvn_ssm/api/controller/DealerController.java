@@ -2,6 +2,7 @@ package com.mvn_ssm.api.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.mvn_ssm.api.service.DealerService;
+import com.mvn_ssm.api.service.IndexService;
 import com.mvn_ssm.api.util.StringTranslateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,6 @@ public class DealerController {
 
     @Autowired
     private DealerService dealerService;
-
     /**
      * 商户登陆，需要前端提供登录名或者密码。
      * 返回值CODE为0时表示登陆失败，为1时表示登陆成功
