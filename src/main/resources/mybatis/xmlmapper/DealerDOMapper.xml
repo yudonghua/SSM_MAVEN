@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mvn_ssm.api.dao.DealerDOMapper">
+    <resultMap id="BaseResultMap" type="com.mvn_ssm.api.bean.DealerDO">
+        <id column="dealer_id" property="dealerId" jdbcType="BIGINT"/>
+        <result column="dealer_username" property="dealerUsername" jdbcType="VARCHAR"/>
+        <result column="dealer_salt" property="dealerSalt" jdbcType="CHAR"/>
+        <result column="dealer_password" property="dealerPassword" jdbcType="VARCHAR"/>
+        <result column="dealer_nickname" property="dealerNickname" jdbcType="VARCHAR"/>
+        <result column="is_mobile" property="isMobile" jdbcType="CHAR"/>
+        <result column="is_email" property="isEmail" jdbcType="CHAR"/>
+        <result column="is_flag" property="isFlag" jdbcType="CHAR"/>
+        <result column="login_ip" property="loginIp" jdbcType="VARCHAR"/>
+        <result column="login_dttm" property="loginDttm" jdbcType="TIMESTAMP"/>
+        <result column="create_dttm" property="createDttm" jdbcType="TIMESTAMP"/>
+        <result column="modified_dttm" property="modifiedDttm" jdbcType="TIMESTAMP"/>
+        <result column="del_flag" property="delFlag" jdbcType="CHAR"/>
+        <result column="del_dttm" property="delDttm" jdbcType="TIMESTAMP"/>
+        <result column="customer_img" property="customerImg" jdbcType="VARCHAR"/>
+        <result column="captcha" property="captcha" jdbcType="VARCHAR"/>
+        <result column="aead_dttm" property="aeadDttm" jdbcType="TIMESTAMP"/>
+        <result column="pwd_captcha" property="pwdCaptcha" jdbcType="VARCHAR"/>
+        <result column="pwd_aead_dttm" property="pwdAeadDttm" jdbcType="TIMESTAMP"/>
+        <result column="third_id" property="thirdId" jdbcType="BIGINT"/>
+        <result column="is_seller" property="isSeller" jdbcType="CHAR"/>
+        <result column="is_temp_cust" property="isTempCust" jdbcType="CHAR"/>
+        <result column="login_key" property="loginKey" jdbcType="VARCHAR"/>
+        <result column="is_site_manager" property="isSiteManager" jdbcType="CHAR"/>
+        <result column="login_error_count" property="loginErrorCount" jdbcType="BIGINT"/>
+        <result column="login_lock_dttm" property="loginLockDttm" jdbcType="TIMESTAMP"/>
+        <result column="user_unique_code" property="userUniqueCode" jdbcType="VARCHAR"/>
+        <result column="user_salt_val" property="userSaltVal" jdbcType="VARCHAR"/>
+        <result column="pc_login_dttm" property="pcLoginDttm" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="getDealerByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select *
+        from wm_dealer
+        WHERE dealer_username=#{username};
+    </select>
+</mapper>
